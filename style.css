@@ -1,0 +1,182 @@
+:root {
+  --background: #ada9a9;
+  --font: #222;
+  --border:rgba(110, 11, 11, 0.25);
+  --screen: rgb(214, 212, 212);
+  --calculator: rgb(72, 70, 70);
+  --btn: rgb(207, 207, 207);
+  --btn-hover: rgb(193, 190, 190);
+  --btn-active: #ccc;
+  --btn-red: #faa;
+  --btn-red-hover: rgb(232, 65, 65);
+  --btn-red-active: #d88;
+  --btn-blue: #aaf;
+  --btn-blue-hover: rgb(81, 81, 223);
+  --btn-blue-active: #88d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+  background-image: url(./image/background.jpg);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--font);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
+  background-image: url(./image/background.jpg);
+  
+}
+
+button {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(180deg, #fffefe, #3f3f3f);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* MAIN */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  min-height: 500px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+
+.calculator {
+  width: 400px;
+  border: 2px var(--border) solid;
+  border-radius: 1px;
+  padding: 15px;
+  background: linear-gradient(180deg, #212121, #3f3f3f);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+.screen {
+  padding: 10px 20px;
+  border: 2px var(--border) solid;
+  border-radius: 1px;
+  margin-bottom: 20px;
+  background-color: var(--screen);
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.screen-last {
+  min-height: 32px;
+  font-size: 20px;
+}
+
+.screen-current {
+  min-height: 64px;
+  font-size: 40px;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.btn {
+  padding: 20px;
+  border: 2px var(--border) solid;
+  border-radius: 1px;
+  background-color: var(--btn);
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:active {
+  background-color: var(--btn-active);
+}
+
+.btn-red {
+  background-color: var(--btn-red);
+}
+
+.btn-red:hover {
+  background-color: var(--btn-red-hover);
+}
+
+.btn-red:active {
+  background-color: var(--btn-red-active);
+}
+
+.btn-blue {
+  background-color: var(--btn-blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--btn-blue-hover);
+}
+
+.btn-blue:active {
+  background-color: var(--btn-blue-active);
+}
+
+/* Disables input spinners in calc screen */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-github {
+  color: var(--font);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
